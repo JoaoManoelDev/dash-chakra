@@ -5,7 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
 const singInFormSchema = z.object({
-  email: z.string().email(),
+  email: z.string().email({ message: 'Digite um e-mail válido' }),
   password: z.string(),
 })
 
@@ -15,7 +15,7 @@ export default function SignIn() {
   const {
     register,
     handleSubmit,
-    formState: { isSubmitting },
+    formState: { isSubmitting, errors },
   } = useForm<signInFormData>({
     resolver: zodResolver(singInFormSchema),
   })
@@ -39,8 +39,18 @@ export default function SignIn() {
         onSubmit={handleSubmit(handleFormSignIn)}
       >
         <Stack spacing="4">
-          <Input type="email" label="E-mail" {...register('email')} />
-          <Input type="password" label="Senha" {...register('password')} />
+          <Input
+            type="email"
+            label="E-mail"
+            {...register('email')}
+            error={errors.email}
+          />
+          <Input
+            type="password"
+            label="Senha"
+            {...register('password')}
+            error={errors.password}
+          />
         </Stack>
 
         <Button
