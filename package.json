@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^2.4.9",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@hookform/resolvers": "^2.9.10",
     "@next/font": "13.1.5",
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
@@ -25,7 +26,8 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.42.1",
     "react-icons": "^4.7.1",
-    "typescript": "4.9.4"
+    "typescript": "4.9.4",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^1.1.3"
